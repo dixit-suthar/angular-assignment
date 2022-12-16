@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Add new Component!</p>
+      <button
+        class="btn btn-primary"
+        (click)="onAddComponentX()">Add Component</button>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <div
+        class="panel panel-default"
+        *ngFor="let element of compElements;let i=index">
+        <label for="">Name {{i}}:</label>
+        <input type="text" id="{{'compx'+i}}" value="{{'textx'+i}}">
+        <button class="btn btn-default" (click)="onAddComponentY(i)">+</button>
+        <div
+        class="panel panel-default"
+        *ngFor="let element of compElements[i];let i=index">
+        <input type="text" id="{{'compy'+i}}" value="{{'texty'+i}}">
+        <button class="btn btn-default">Save</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let el of compElements;let i=index">
+    {{"{"+ el +"{"}}
+    <div *ngFor="let e of compElements[i]">
+      {{e + ", "}}
+    </div>
+    {{'}'}}
+  </div>
+  <button (click)="show()">Save</button>
+</div>
