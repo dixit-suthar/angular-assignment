@@ -1,0 +1,9 @@
+#one{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top:20;
+    left:20;
+    color: white;
+}
